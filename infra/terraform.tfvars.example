@@ -1,0 +1,23 @@
+# 复制为 terraform.tfvars 并按环境填写
+# cp terraform.tfvars.example terraform.tfvars
+
+region     = "cn-north-4"
+stack_prefix = "mainframe-orchestration"
+
+# 可用区（按 region 调整，如北京四 a/b/c）
+azs        = ["cn-north-4a", "cn-north-4b"]
+az_count   = 2
+
+# 数据库管理员密码（8-128 位，含大小写+数字+特殊字符）
+db_password = "ChangeMe_12345!"
+
+# CCE 节点认证：密码或密钥对二选一
+# cce_node_password = "ChangeMe_12345!"
+cce_node_key_pair   = ""
+cce_node_password   = "ChangeMe_12345!"
+
+# 业务镜像（替换为推送后的 SWR 镜像地址）
+# container_image = "swr.cn-north-4.myhuaweicloud.com/mainframe-orchestration/bluage-runtime:latest"
+
+# 批处理任务是否需要出公网（false 走内网）
+direct_internet_access_required = false
